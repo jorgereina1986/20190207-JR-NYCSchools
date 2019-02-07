@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">20190207-JR-NYCSchools</string>
+    <string name="details_school_description">Description:</string>
+    <string name="details_school_address">Address:</string>
+    <string name="details_school_Email">Email:</string>
+    <string name="details_school_phone">Phone:</string>
 </resources>

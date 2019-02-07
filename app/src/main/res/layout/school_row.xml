@@ -16,8 +16,8 @@
             android:id="@+id/school_name_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:text="@{school.school_name}"/>
+            android:text="@{school.schoolName}"
+            android:textAlignment="center" />
 
     </android.support.constraint.ConstraintLayout>
 </layout>

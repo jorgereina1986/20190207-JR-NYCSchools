@@ -35,7 +35,7 @@ public class SchoolViewModel extends ViewModel {
     }
 
     public void setSchool(School school) {
-        Log.d(TAG, "setSchool: " + school.getSchool_name());
+        Log.d(TAG, "setSchool: " + school.getSchoolName());
         this.school.setValue(school);
     }
 
@@ -48,7 +48,7 @@ public class SchoolViewModel extends ViewModel {
         listCall.enqueue(new Callback<List<School>>() {
             @Override
             public void onResponse(Call<List<School>> call, Response<List<School>> response) {
-                Log.d(TAG, "onResponse: " + response.body().get(0).getSchool_name());
+                Log.d(TAG, "onResponse: " + response.body().get(0).getSchoolName());
                 schools.setValue(response.body());
             }
 
