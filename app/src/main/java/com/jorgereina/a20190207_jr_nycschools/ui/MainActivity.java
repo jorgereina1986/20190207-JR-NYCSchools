@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.jorgereina.a20190207_jr_nycschools.R;
 import com.jorgereina.a20190207_jr_nycschools.SchoolViewModel;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Item
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         if (isNetworkAvailable()) {
-//            hideOfflineViews();
+            hideOfflineViews();
             if (fragmentManager.findFragmentById(R.id.fragment_container) == null) {
                 ListFragment listFragment = ListFragment.newInstance();
                 fragmentManager
@@ -52,8 +53,18 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Item
                         .commit();
             }
         } else {
-//            showOfflineViews();
+            showOfflineViews();
         }
+    }
+
+    private void showOfflineViews() {
+        binding.noInternetTv.setVisibility(View.VISIBLE);
+        binding.wifiLogo.setVisibility(View.VISIBLE);
+    }
+
+    private void hideOfflineViews() {
+        binding.noInternetTv.setVisibility(View.GONE);
+        binding.wifiLogo.setVisibility(View.GONE);
     }
 
     private boolean isNetworkAvailable() {
@@ -74,8 +85,6 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Item
             }
         });
 
-
-//
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, DetailsFragment.getInstance())

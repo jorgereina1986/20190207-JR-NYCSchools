@@ -8,18 +8,29 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:text="@string/details_school_description"-->
-    <!--android:textStyle="bold"-->
-    <!--android:textSize="22sp"-->
+    <style name="details_title">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/fragment_details_school_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+
+    </style>
 
     <style name="details_subtitle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">22sp</item>
+        <item name="android:textSize">@dimen/fragment_details_school_subtitle_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="details_info">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
     </style>
 
 </resources>
