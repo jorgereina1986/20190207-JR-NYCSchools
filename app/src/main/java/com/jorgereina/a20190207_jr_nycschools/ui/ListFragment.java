@@ -51,6 +51,8 @@ public class ListFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        // Fetches School Data and adds it to the adapter to handle
         viewModel = ViewModelProviders.of(getActivity()).get(SchoolViewModel.class);
         if (schools != null || schools.isEmpty()) {
             viewModel.getSchools().observe(getActivity(), new Observer<List<School>>() {
@@ -61,6 +63,7 @@ public class ListFragment extends Fragment {
             });
         }
 
+        // Observes errors if there's a problem fetching data from NYC School's API
         viewModel.getErrorMessage().observe(getActivity(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
@@ -78,7 +81,6 @@ public class ListFragment extends Fragment {
         binding.schoolsRv.setAdapter(adapter);
         return binding.getRoot();
     }
-
 
     interface ItemClickListener {
         void onItemClick(int position);

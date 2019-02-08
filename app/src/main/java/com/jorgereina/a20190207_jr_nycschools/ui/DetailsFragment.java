@@ -45,6 +45,7 @@ public class DetailsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final SchoolViewModel viewModel = ViewModelProviders.of(getActivity()).get(SchoolViewModel.class);
+        // Fetches SAT scores
         viewModel.getScores().observe(getViewLifecycleOwner(), new Observer<List<Score>>() {
             @Override
             public void onChanged(@Nullable List<Score> scores) {
@@ -52,6 +53,7 @@ public class DetailsFragment extends Fragment {
             }
         });
 
+        // Matches up schools with scores according to their matching attribute "dbn"
         viewModel.getSchool().observe(getViewLifecycleOwner(), new Observer<School>() {
             @Override
             public void onChanged(@Nullable final School school) {
