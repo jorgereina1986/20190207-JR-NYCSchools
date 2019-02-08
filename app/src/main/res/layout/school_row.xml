@@ -31,7 +31,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@{school.city}"
+                android:text="@{@string/school_row_city_state(school.city, school.state) ?? @string/not_available}"
                 app:layout_constraintTop_toBottomOf="@id/school_name_tv" />
 
         </android.support.constraint.ConstraintLayout>

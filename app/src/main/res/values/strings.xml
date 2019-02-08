@@ -10,4 +10,5 @@
     <string name="details_reading">READING</string>
     <string name="details_writing">WRITING</string>
     <string name="not_available">N/A</string>
+    <string name="school_row_city_state">%1$s, %2$s</string>
 </resources>
