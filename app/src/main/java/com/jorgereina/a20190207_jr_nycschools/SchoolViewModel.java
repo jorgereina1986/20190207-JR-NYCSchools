@@ -24,6 +24,7 @@ public class SchoolViewModel extends ViewModel {
     private MutableLiveData<School> school = new MutableLiveData<>();
     private MutableLiveData<List<Score>> scores;
     private MutableLiveData<Score> score = new MutableLiveData<>();
+    private MutableLiveData<String> errorMessage = new MutableLiveData<>();
 
 
     public MutableLiveData<List<School>> getSchools() {
@@ -52,14 +53,12 @@ public class SchoolViewModel extends ViewModel {
         listCall.enqueue(new Callback<List<School>>() {
             @Override
             public void onResponse(Call<List<School>> call, Response<List<School>> response) {
-                Log.d(TAG, "onResponse: " + response.body().get(0).getSchoolName());
                 schools.setValue(response.body());
             }
 
             @Override
             public void onFailure(Call<List<School>> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.getMessage());
-
+                setErrorMessage(t.getMessage());
             }
         });
     }
@@ -90,17 +89,21 @@ public class SchoolViewModel extends ViewModel {
         listCall.enqueue(new Callback<List<Score>>() {
             @Override
             public void onResponse(Call<List<Score>> call, Response<List<Score>> response) {
-                Log.d(TAG, "onResponse: " + response.body().get(0));
                 scores.setValue(response.body());
             }
 
             @Override
             public void onFailure(Call<List<Score>> call, Throwable t) {
-                Log.d(TAG, "onFailure: " + t.getMessage());
-
+                setErrorMessage(t.getMessage());
             }
         });
     }
 
+    public MutableLiveData<String> getErrorMessage() {
+        return errorMessage;
+    }
 
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage.setValue(errorMessage);
+    }
 }

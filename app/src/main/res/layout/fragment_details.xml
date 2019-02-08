@@ -7,6 +7,10 @@
         <variable
             name="school"
             type="com.jorgereina.a20190207_jr_nycschools.data.School" />
+
+        <variable
+            name="score"
+            type="com.jorgereina.a20190207_jr_nycschools.data.Score" />
     </data>
 
     <ScrollView
@@ -16,7 +20,7 @@
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/main_fragment_padding">
+            android:padding="@dimen/fragment_list_padding">
 
             <TextView
                 android:id="@+id/details_school_name_tv"
@@ -82,7 +86,7 @@
 
             <TextView
                 android:id="@+id/details_math_title_tv"
-                style="@style/scores_style"
+                style="@style/scores_subtitle"
                 android:text="@string/details_math"
                 app:layout_constraintEnd_toStartOf="@+id/details_reading_title_tv"
                 app:layout_constraintHorizontal_bias="0.5"
@@ -92,7 +96,7 @@
 
             <TextView
                 android:id="@+id/details_reading_title_tv"
-                style="@style/scores_style"
+                style="@style/scores_subtitle"
                 android:text="@string/details_reading"
                 app:layout_constraintBottom_toBottomOf="@+id/details_math_title_tv"
                 app:layout_constraintEnd_toStartOf="@+id/details_writing_title_tv"
@@ -101,7 +105,7 @@
 
             <TextView
                 android:id="@+id/details_writing_title_tv"
-                style="@style/scores_style"
+                style="@style/scores_subtitle"
                 android:text="@string/details_writing"
                 app:layout_constraintBottom_toBottomOf="@+id/details_reading_title_tv"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -111,6 +115,7 @@
             <TextView
                 android:id="@+id/details_math_scores_tv"
                 style="@style/score_info"
+                android:text="@{score.mathScore ?? @string/not_available}"
                 app:layout_constraintEnd_toEndOf="@id/details_math_title_tv"
                 app:layout_constraintStart_toStartOf="@id/details_math_title_tv"
                 app:layout_constraintTop_toBottomOf="@+id/details_math_title_tv" />
@@ -118,6 +123,7 @@
             <TextView
                 android:id="@+id/details_reading_scores_tv"
                 style="@style/score_info"
+                android:text="@{score.readingScore ?? @string/not_available}"
                 app:layout_constraintEnd_toEndOf="@id/details_reading_title_tv"
                 app:layout_constraintStart_toStartOf="@id/details_reading_title_tv"
                 app:layout_constraintTop_toBottomOf="@+id/details_reading_title_tv" />
@@ -125,6 +131,7 @@
             <TextView
                 android:id="@+id/details_writing_scores_tv"
                 style="@style/score_info"
+                android:text="@{score.writingScore ?? @string/not_available}"
                 app:layout_constraintEnd_toEndOf="@id/details_writing_title_tv"
                 app:layout_constraintStart_toStartOf="@id/details_writing_title_tv"
                 app:layout_constraintTop_toBottomOf="@+id/details_writing_title_tv" />

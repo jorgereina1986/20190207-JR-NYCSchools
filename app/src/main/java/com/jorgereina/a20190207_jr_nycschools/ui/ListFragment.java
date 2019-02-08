@@ -12,6 +12,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.jorgereina.a20190207_jr_nycschools.R;
 import com.jorgereina.a20190207_jr_nycschools.SchoolViewModel;
@@ -59,6 +60,13 @@ public class ListFragment extends Fragment {
                 }
             });
         }
+
+        viewModel.getErrorMessage().observe(getActivity(), new Observer<String>() {
+            @Override
+            public void onChanged(@Nullable String s) {
+                Toast.makeText(getContext(), s, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Nullable

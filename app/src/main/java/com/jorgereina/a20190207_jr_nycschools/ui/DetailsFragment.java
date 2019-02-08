@@ -23,7 +23,6 @@ import java.util.List;
 
 public class DetailsFragment extends Fragment {
 
-    private static final String TAG = DetailsFragment.class.getSimpleName();
     private FragmentDetailsBinding binding;
     private List<Score> scoreList = new ArrayList<>();
 
@@ -33,7 +32,6 @@ public class DetailsFragment extends Fragment {
     public static DetailsFragment getInstance() {
         return new DetailsFragment();
     }
-
 
     @Nullable
     @Override
@@ -47,12 +45,9 @@ public class DetailsFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         final SchoolViewModel viewModel = ViewModelProviders.of(getActivity()).get(SchoolViewModel.class);
-
-        //TODO: There should be a better way to get the scores
         viewModel.getScores().observe(getViewLifecycleOwner(), new Observer<List<Score>>() {
             @Override
             public void onChanged(@Nullable List<Score> scores) {
-                Log.d(TAG, "onChanged: " + scores.get(0).getDbn());
                 scoreList = scores;
             }
         });
@@ -61,19 +56,12 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onChanged(@Nullable final School school) {
                 binding.setSchool(school);
-
                 for (Score score : scoreList) {
                     if (school.getDbn().equals(score.getDbn())) {
-                        Log.d(TAG, "onChanged: score: " + score.getMathScore());
-                        binding.detailsMathScoresTv.setText(score.getMathScore());
-                        binding.detailsReadingScoresTv.setText(score.getReadingScore());
-                        binding.detailsWritingScoresTv.setText(score.getWritingScore());
+                        binding.setScore(score);
                     }
                 }
-
             }
         });
-
-
     }
 }
