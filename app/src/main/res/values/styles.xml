@@ -33,4 +33,20 @@
         <item name="android:textSize">15sp</item>
     </style>
 
+    <style name="score_info">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:text">@string/not_available</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="scores_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/fragment_details_score_title_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
 </resources>

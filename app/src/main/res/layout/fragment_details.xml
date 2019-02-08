@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
@@ -67,5 +68,62 @@
             style="@style/details_info"
             android:text="@{school.description}"
             app:layout_constraintTop_toBottomOf="@+id/details_description_title" />
+
+        <TextView
+            android:id="@+id/details_scores_title"
+            style="@style/details_subtitle"
+            android:text="@string/details_scores"
+            android:textAlignment="center"
+            app:layout_constraintTop_toBottomOf="@+id/details_school_description_tv" />
+
+        <TextView
+            android:id="@+id/details_math_title_tv"
+            style="@style/scores_style"
+            android:text="@string/details_math"
+            app:layout_constraintEnd_toStartOf="@+id/details_reading_title_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/details_scores_title" />
+
+        <TextView
+            android:id="@+id/details_reading_title_tv"
+            style="@style/scores_style"
+            android:text="@string/details_reading"
+            app:layout_constraintBottom_toBottomOf="@+id/details_math_title_tv"
+            app:layout_constraintEnd_toStartOf="@+id/details_writing_title_tv"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/details_math_title_tv" />
+
+        <TextView
+            android:id="@+id/details_writing_title_tv"
+            style="@style/scores_style"
+            android:text="@string/details_writing"
+            app:layout_constraintBottom_toBottomOf="@+id/details_reading_title_tv"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/details_reading_title_tv" />
+
+        <TextView
+            android:id="@+id/details_math_scores_tv"
+            style="@style/score_info"
+            app:layout_constraintEnd_toEndOf="@id/details_math_title_tv"
+            app:layout_constraintStart_toStartOf="@id/details_math_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/details_math_title_tv" />
+
+        <TextView
+            android:id="@+id/details_reading_scores_tv"
+            style="@style/score_info"
+            app:layout_constraintEnd_toEndOf="@id/details_reading_title_tv"
+            app:layout_constraintStart_toStartOf="@id/details_reading_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/details_reading_title_tv" />
+
+        <TextView
+            android:id="@+id/details_writing_scores_tv"
+            style="@style/score_info"
+            app:layout_constraintEnd_toEndOf="@id/details_writing_title_tv"
+            app:layout_constraintStart_toStartOf="@id/details_writing_title_tv"
+            app:layout_constraintTop_toBottomOf="@+id/details_writing_title_tv" />
+
     </android.support.constraint.ConstraintLayout>
 </layout>

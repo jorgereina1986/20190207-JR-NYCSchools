@@ -36,13 +36,10 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Item
         loadListFragment();
 
         viewModel = ViewModelProviders.of(this).get(SchoolViewModel.class);
-
     }
 
     private void loadListFragment() {
-
         FragmentManager fragmentManager = getSupportFragmentManager();
-
         if (isNetworkAvailable()) {
             hideOfflineViews();
             if (fragmentManager.findFragmentById(R.id.fragment_container) == null) {
@@ -57,16 +54,19 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Item
         }
     }
 
+    // if no internet is available display these views
     private void showOfflineViews() {
         binding.noInternetTv.setVisibility(View.VISIBLE);
         binding.wifiLogo.setVisibility(View.VISIBLE);
     }
 
+    // if internet is available hide these views
     private void hideOfflineViews() {
         binding.noInternetTv.setVisibility(View.GONE);
         binding.wifiLogo.setVisibility(View.GONE);
     }
 
+    // checks for internet connection
     private boolean isNetworkAvailable() {
         ConnectivityManager connectivityManager
                 = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -76,7 +76,6 @@ public class MainActivity extends AppCompatActivity implements ListFragment.Item
 
     @Override
     public void onItemClick(final int position) {
-
         viewModel.getSchools().observe(this, new Observer<List<School>>() {
             @Override
             public void onChanged(@Nullable List<School> schools) {

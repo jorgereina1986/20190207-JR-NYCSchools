@@ -11,29 +11,28 @@
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardUseCompatPadding="true"
-        android:padding="10dp">
+        android:padding="10dp"
+        app:cardUseCompatPadding="true">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp">
 
-        <TextView
-            android:id="@+id/school_name_tv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:text="@{school.schoolName}" />
+            <TextView
+                android:id="@+id/school_name_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="@{school.schoolName}"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@{school.city}"
-            app:layout_constraintTop_toBottomOf="@id/school_name_tv"
-            />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{school.city}"
+                app:layout_constraintTop_toBottomOf="@id/school_name_tv" />
 
         </android.support.constraint.ConstraintLayout>
     </android.support.v7.widget.CardView>

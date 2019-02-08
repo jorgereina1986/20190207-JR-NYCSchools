@@ -20,6 +20,8 @@ public class School {
     private String zipCode;
     @SerializedName("city")
     private String city;
+    @SerializedName("dbn")
+    private String dbn;
     private String fullAddress;
 
     public String getSchoolName() {
@@ -84,6 +86,14 @@ public class School {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getDbn() {
+        return dbn;
+    }
+
+    public void setDbn(String dbn) {
+        this.dbn = dbn;
     }
 
     public String getFullAddress() {
