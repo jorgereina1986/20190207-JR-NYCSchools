@@ -11,7 +11,9 @@
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/row_cardview_padding"
         app:cardUseCompatPadding="true">
 
         <android.support.constraint.ConstraintLayout
@@ -25,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:singleLine="true"
                 android:text="@{school.schoolName}"
-                android:textSize="16sp"
+                android:textSize="@dimen/row_school_title"
                 android:textStyle="bold" />
 
             <TextView

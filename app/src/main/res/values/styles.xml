@@ -14,8 +14,8 @@
         <item name="android:textSize">@dimen/fragment_details_school_title_size</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textAlignment">center</item>
-        <item name="android:layout_marginTop">8dp</item>
-        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginTop">@dimen/fragment_details_title_layout_margin_bottom</item>
+        <item name="android:layout_marginBottom">@dimen/fragment_details_title_layout_margin_top</item>
 
     </style>
 
@@ -24,29 +24,28 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/fragment_details_school_subtitle_size</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginTop">@dimen/fragment_details_school_subtitle_text_size</item>
     </style>
 
     <style name="details_info">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">@dimen/fragment_details_school_info_text_size</item>
     </style>
 
     <style name="score_info">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textSize">15sp</item>
-        <item name="android:text">@string/not_available</item>
-        <item name="android:layout_marginTop">5dp</item>
+        <item name="android:textSize">@dimen/fragment_details_score_info_text_size</item>
+        <item name="android:layout_marginTop">@dimen/fragment_details_score_info_margin_top</item>
     </style>
 
-    <style name="scores_style">
+    <style name="scores_subtitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/fragment_details_score_title_size</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginTop">@dimen/fragment_details_score_subtitle_margin_top</item>
     </style>
 
 </resources>
