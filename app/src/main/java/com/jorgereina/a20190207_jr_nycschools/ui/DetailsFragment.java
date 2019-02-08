@@ -48,6 +48,7 @@ public class DetailsFragment extends Fragment {
 
         final SchoolViewModel viewModel = ViewModelProviders.of(getActivity()).get(SchoolViewModel.class);
 
+        //TODO: There should be a better way to get the scores
         viewModel.getScores().observe(getViewLifecycleOwner(), new Observer<List<Score>>() {
             @Override
             public void onChanged(@Nullable List<Score> scores) {

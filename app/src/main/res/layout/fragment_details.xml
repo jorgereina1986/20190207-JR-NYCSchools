@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -30,7 +29,7 @@
         <TextView
             android:id="@+id/details_school_address_tv"
             style="@style/details_info"
-            android:text="@{school.fullAddress}"
+            android:text="@{school.fullAddress ?? @string/not_available}"
             app:layout_constraintTop_toBottomOf="@+id/details_address_title" />
 
         <TextView
@@ -42,7 +41,7 @@
         <TextView
             android:id="@+id/detaisl_school_email_tv"
             style="@style/details_info"
-            android:text="@{school.email}"
+            android:text="@{school.email ?? @string/not_available}"
             app:layout_constraintTop_toBottomOf="@+id/details_email_title" />
 
         <TextView
@@ -54,7 +53,7 @@
         <TextView
             android:id="@+id/details_school_phone_number_tv"
             style="@style/details_info"
-            android:text="@{school.phoneNumber}"
+            android:text="@{school.phoneNumber ?? @string/not_available}"
             app:layout_constraintTop_toBottomOf="@+id/details_phone_title" />
 
         <TextView
@@ -66,7 +65,7 @@
         <TextView
             android:id="@+id/details_school_description_tv"
             style="@style/details_info"
-            android:text="@{school.description}"
+            android:text="@{school.description ?? @string/not_available}"
             app:layout_constraintTop_toBottomOf="@+id/details_description_title" />
 
         <TextView
