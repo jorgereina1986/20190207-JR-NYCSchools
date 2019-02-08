@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,121 +9,126 @@
             type="com.jorgereina.a20190207_jr_nycschools.data.School" />
     </data>
 
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="@dimen/main_fragment_padding">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/details_school_name_tv"
-            style="@style/details_title"
-            android:text="@{school.schoolName}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/main_fragment_padding">
 
-        <TextView
-            android:id="@+id/details_address_title"
-            style="@style/details_subtitle"
-            android:text="@string/details_school_address"
-            app:layout_constraintTop_toBottomOf="@+id/details_school_name_tv" />
+            <TextView
+                android:id="@+id/details_school_name_tv"
+                style="@style/details_title"
+                android:text="@{school.schoolName}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/details_school_address_tv"
-            style="@style/details_info"
-            android:text="@{school.fullAddress ?? @string/not_available}"
-            app:layout_constraintTop_toBottomOf="@+id/details_address_title" />
+            <TextView
+                android:id="@+id/details_address_title"
+                style="@style/details_subtitle"
+                android:text="@string/details_school_address"
+                app:layout_constraintTop_toBottomOf="@+id/details_school_name_tv" />
 
-        <TextView
-            android:id="@+id/details_email_title"
-            style="@style/details_subtitle"
-            android:text="@string/details_school_Email"
-            app:layout_constraintTop_toBottomOf="@+id/details_school_address_tv" />
+            <TextView
+                android:id="@+id/details_school_address_tv"
+                style="@style/details_info"
+                android:text="@{school.fullAddress ?? @string/not_available}"
+                app:layout_constraintTop_toBottomOf="@+id/details_address_title" />
 
-        <TextView
-            android:id="@+id/detaisl_school_email_tv"
-            style="@style/details_info"
-            android:text="@{school.email ?? @string/not_available}"
-            app:layout_constraintTop_toBottomOf="@+id/details_email_title" />
+            <TextView
+                android:id="@+id/details_email_title"
+                style="@style/details_subtitle"
+                android:text="@string/details_school_Email"
+                app:layout_constraintTop_toBottomOf="@+id/details_school_address_tv" />
 
-        <TextView
-            android:id="@+id/details_phone_title"
-            style="@style/details_subtitle"
-            android:text="@string/details_school_phone"
-            app:layout_constraintTop_toBottomOf="@+id/detaisl_school_email_tv" />
+            <TextView
+                android:id="@+id/detaisl_school_email_tv"
+                style="@style/details_info"
+                android:text="@{school.email ?? @string/not_available}"
+                app:layout_constraintTop_toBottomOf="@+id/details_email_title" />
 
-        <TextView
-            android:id="@+id/details_school_phone_number_tv"
-            style="@style/details_info"
-            android:text="@{school.phoneNumber ?? @string/not_available}"
-            app:layout_constraintTop_toBottomOf="@+id/details_phone_title" />
+            <TextView
+                android:id="@+id/details_phone_title"
+                style="@style/details_subtitle"
+                android:text="@string/details_school_phone"
+                app:layout_constraintTop_toBottomOf="@+id/detaisl_school_email_tv" />
 
-        <TextView
-            android:id="@+id/details_description_title"
-            style="@style/details_subtitle"
-            android:text="@string/details_school_description"
-            app:layout_constraintTop_toBottomOf="@+id/details_school_phone_number_tv" />
+            <TextView
+                android:id="@+id/details_school_phone_number_tv"
+                style="@style/details_info"
+                android:text="@{school.phoneNumber ?? @string/not_available}"
+                app:layout_constraintTop_toBottomOf="@+id/details_phone_title" />
 
-        <TextView
-            android:id="@+id/details_school_description_tv"
-            style="@style/details_info"
-            android:text="@{school.description ?? @string/not_available}"
-            app:layout_constraintTop_toBottomOf="@+id/details_description_title" />
+            <TextView
+                android:id="@+id/details_description_title"
+                style="@style/details_subtitle"
+                android:text="@string/details_school_description"
+                app:layout_constraintTop_toBottomOf="@+id/details_school_phone_number_tv" />
 
-        <TextView
-            android:id="@+id/details_scores_title"
-            style="@style/details_subtitle"
-            android:text="@string/details_scores"
-            android:textAlignment="center"
-            app:layout_constraintTop_toBottomOf="@+id/details_school_description_tv" />
+            <TextView
+                android:id="@+id/details_school_description_tv"
+                style="@style/details_info"
+                android:text="@{school.description ?? @string/not_available}"
+                app:layout_constraintTop_toBottomOf="@+id/details_description_title" />
 
-        <TextView
-            android:id="@+id/details_math_title_tv"
-            style="@style/scores_style"
-            android:text="@string/details_math"
-            app:layout_constraintEnd_toStartOf="@+id/details_reading_title_tv"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintHorizontal_chainStyle="spread"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/details_scores_title" />
+            <TextView
+                android:id="@+id/details_scores_title"
+                style="@style/details_subtitle"
+                android:text="@string/details_scores"
+                android:textAlignment="center"
+                app:layout_constraintTop_toBottomOf="@+id/details_school_description_tv" />
 
-        <TextView
-            android:id="@+id/details_reading_title_tv"
-            style="@style/scores_style"
-            android:text="@string/details_reading"
-            app:layout_constraintBottom_toBottomOf="@+id/details_math_title_tv"
-            app:layout_constraintEnd_toStartOf="@+id/details_writing_title_tv"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/details_math_title_tv" />
+            <TextView
+                android:id="@+id/details_math_title_tv"
+                style="@style/scores_style"
+                android:text="@string/details_math"
+                app:layout_constraintEnd_toStartOf="@+id/details_reading_title_tv"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintHorizontal_chainStyle="spread"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/details_scores_title" />
 
-        <TextView
-            android:id="@+id/details_writing_title_tv"
-            style="@style/scores_style"
-            android:text="@string/details_writing"
-            app:layout_constraintBottom_toBottomOf="@+id/details_reading_title_tv"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/details_reading_title_tv" />
+            <TextView
+                android:id="@+id/details_reading_title_tv"
+                style="@style/scores_style"
+                android:text="@string/details_reading"
+                app:layout_constraintBottom_toBottomOf="@+id/details_math_title_tv"
+                app:layout_constraintEnd_toStartOf="@+id/details_writing_title_tv"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/details_math_title_tv" />
 
-        <TextView
-            android:id="@+id/details_math_scores_tv"
-            style="@style/score_info"
-            app:layout_constraintEnd_toEndOf="@id/details_math_title_tv"
-            app:layout_constraintStart_toStartOf="@id/details_math_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/details_math_title_tv" />
+            <TextView
+                android:id="@+id/details_writing_title_tv"
+                style="@style/scores_style"
+                android:text="@string/details_writing"
+                app:layout_constraintBottom_toBottomOf="@+id/details_reading_title_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/details_reading_title_tv" />
 
-        <TextView
-            android:id="@+id/details_reading_scores_tv"
-            style="@style/score_info"
-            app:layout_constraintEnd_toEndOf="@id/details_reading_title_tv"
-            app:layout_constraintStart_toStartOf="@id/details_reading_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/details_reading_title_tv" />
+            <TextView
+                android:id="@+id/details_math_scores_tv"
+                style="@style/score_info"
+                app:layout_constraintEnd_toEndOf="@id/details_math_title_tv"
+                app:layout_constraintStart_toStartOf="@id/details_math_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/details_math_title_tv" />
 
-        <TextView
-            android:id="@+id/details_writing_scores_tv"
-            style="@style/score_info"
-            app:layout_constraintEnd_toEndOf="@id/details_writing_title_tv"
-            app:layout_constraintStart_toStartOf="@id/details_writing_title_tv"
-            app:layout_constraintTop_toBottomOf="@+id/details_writing_title_tv" />
+            <TextView
+                android:id="@+id/details_reading_scores_tv"
+                style="@style/score_info"
+                app:layout_constraintEnd_toEndOf="@id/details_reading_title_tv"
+                app:layout_constraintStart_toStartOf="@id/details_reading_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/details_reading_title_tv" />
 
-    </android.support.constraint.ConstraintLayout>
+            <TextView
+                android:id="@+id/details_writing_scores_tv"
+                style="@style/score_info"
+                app:layout_constraintEnd_toEndOf="@id/details_writing_title_tv"
+                app:layout_constraintStart_toStartOf="@id/details_writing_title_tv"
+                app:layout_constraintTop_toBottomOf="@+id/details_writing_title_tv" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </layout>
