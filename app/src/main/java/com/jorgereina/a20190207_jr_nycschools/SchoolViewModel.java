@@ -17,7 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class SchoolViewModel extends ViewModel {
 
-    public static final String BASE_URL = "";
+    public static final String BASE_URL = "https://data.cityofnewyork.us/resource/";
     public static final String TAG = SchoolViewModel.class.getSimpleName();
 
     private MutableLiveData<List<School>> schools;
@@ -45,7 +45,7 @@ public class SchoolViewModel extends ViewModel {
     }
 
     private void loadSchool() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://data.cityofnewyork.us/resource/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         SchoolApi schoolApi = retrofit.create(SchoolApi.class);
 
