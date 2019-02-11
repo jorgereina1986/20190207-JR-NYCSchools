@@ -81,7 +81,7 @@ public class SchoolViewModel extends ViewModel {
     }
 
     private void loadScores() {
-        Retrofit retrofit = new Retrofit.Builder().baseUrl("https://data.cityofnewyork.us/resource/")
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create()).build();
         SchoolApi schoolApi = retrofit.create(SchoolApi.class);
 
